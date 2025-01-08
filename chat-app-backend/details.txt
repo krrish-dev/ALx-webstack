@@ -1,0 +1,145 @@
+https://www.mongodb.com/products/platform/atlas-database
+chat-app-websocket
+s3NVhqEqsoJMdEvd
+
+mongodb+srv://chat-app-websocket:s3NVhqEqsoJMdEvd@cluster0.wqzjh.mongodb.net/
+
+
+--------------
+end points test
+
+http://localhost:5000/api/auth/register
+body.req
+{
+  "username": "testuser",
+  "email": "testuser@example.com",
+  "password": "password123",
+  "bio": "This is a test user bio.",
+  "profilePicture": "https://example.com/profile.jpg"
+}
+body.res
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3N2NmN2IyNWFlOGVjMjllNGIyMTZlZCIsImlhdCI6MTczNjI0MzEyMiwiZXhwIjoxNzM2ODQ3OTIyfQ.n1jWpuY7yFtDV_jZOF2yWUefZFZ76UGopvyl1eZkijY",
+  "user": {
+    "id": "677cf7b25ae8ec29e4b216ed",
+    "username": "testuser",
+    "email": "testuser@example.com",
+    "bio": "This is a test user bio.",
+    "profilePicture": "https://example.com/profile.jpg"
+  }
+}
+
+------------
+
+http://localhost:5000/api/auth/login
+
+body.req
+
+{
+  "username": "krrish",
+  "password": "123"
+}
+
+body.res
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Njk0NzRjZjFmMzU1NGU0NGI4ZGZlNCIsImlhdCI6MTczNjI0MzYzNiwiZXhwIjoxNzM2ODQ4NDM2fQ.VzMYHC50k61t6bUNZMZ7hrUtaTBRdb8LsXjlRwLYRwI",
+  "user": {
+    "id": "6769474cf1f3554e44b8dfe4",
+    "username": "krrish",
+    "email": "justbegintoday@gmail.com",
+    "bio": "",
+    "profilePicture": ""
+  }
+}
+
+--------------------------------
+GET profile by id Using token in auth bearer
+
+http://localhost:5000/api/auth/profile/6769474cf1f3554e44b8dfe4
+
+{
+  "role": "user",
+  "_id": "6769474cf1f3554e44b8dfe4",
+  "username": "krrish",
+  "email": "justbegintoday@gmail.com",
+  "bio": "",
+  "profilePicture": "",
+  "createdAt": "2024-12-23T11:19:40.010Z",
+  "updatedAt": "2024-12-23T11:19:40.010Z",
+  "__v": 0
+}
+
+-----------------------------------------
+
+PUT for update user data 
+http://localhost:5000/api/auth/profile/6769474cf1f3554e44b8dfe4
+
+{
+  "username": "krrish_updated",
+  "bio": "Updated bio for krrish.",
+  "profilePicture": "https://example.com/new-profile.jpg",
+  "password": "newpassword123"
+}
+
+DELETE by user id / require user role admin 
+http://localhost:5000/api/auth/profile/6769474cf1f3554e44b8dfe4
+
+--------------------------------------------------
+that GET ALL rooms / POST  to create a room
+http://localhost:5000/api/rooms
+
+body.req
+{
+  "name": "Room 3",
+  "description": "This is Room 3",
+  "createdBy" : "6769474cf1f3554e44b8dfe4"
+}
+
+body.res
+{
+  "name": "Room 3",
+  "_id": "677d00fa5ae8ec29e4b21703",
+  "createdAt": "2025-01-07T10:24:58.128Z",
+  "__v": 0
+}
+
+PUT/DELETE  by id // require  auth token
+http://localhost:5000/api/rooms/677d00fa5ae8ec29e4b21703
+PUT
+body.req
+{
+  "name": "Room 3",
+  "description": "This is Room 3 "
+}
+
+body.res
+{
+  "_id": "677d00fa5ae8ec29e4b21703",
+  "name": "Room 3",
+  "createdAt": "2025-01-07T10:24:58.128Z",
+  "__v": 0
+}
+------------------------------------
+
+Messages api post req
+http://localhost:5000/api/messages/
+
+{
+  "text": "Hello, Room 1!",
+  "user": "6769474cf1f3554e44b8dfe4",
+  "roomId": "677d08a52b597786c4216858"
+}
+
+body.res 
+{
+  "text": "Hello, Room 1!",
+  "user": "6769474cf1f3554e44b8dfe4",
+  "roomId": "677d08a52b597786c4216858",
+  "_id": "677d13832514fe8b66ea015a",
+  "createdAt": "2025-01-07T11:44:03.945Z",
+  "__v": 0
+}
+
+to get all messages for room  
+http://localhost:5000/api/messages/:roomeid
+
