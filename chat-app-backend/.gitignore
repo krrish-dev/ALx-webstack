@@ -7,7 +7,6 @@ servercopy.js
 test.js
 testcode.js
 # Ignore environment variables
-.env
 .env.local
 .env.development
 .env.production
