@@ -1,3 +1,4 @@
+// Description: Handles all routes for messages
 const express = require('express');
 const Message = require('../models/Message');
 const Room = require('../models/Room');
