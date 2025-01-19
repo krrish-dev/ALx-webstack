@@ -1,6 +1,6 @@
 # ALx-webstack Chat Application
 Webstack - Portfolio Project 
-
+by Kerols badr
 ## Overview
 This project is a real-time chat application that allows users to join different chat rooms and exchange messages in real-time. The application is built using a modern tech stack, including React for the frontend, Node.js for the backend, and WebSocket for real-time communication. The application also includes features like user authentication, chat history storage, and the ability for users to upload profile pictures and add bios.
 
@@ -144,18 +144,18 @@ This project is a real-time chat application that allows users to join different
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/chat-app.git
+git clone https://github.com/krrish-dev/ALx-webstack.git
 cd chat-app
 ```
 
 ### Install Dependencies
 ```bash
 # Install backend dependencies
-cd backend
+cd chat-app-backend
 npm install
 
 # Install frontend dependencies
-cd ../frontend
+cd chat-app-frontend
 npm install
 ```
 
