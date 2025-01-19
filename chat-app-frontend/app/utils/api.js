@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// all of frontend api calls are made here
 const API_URL = 'http://localhost:5000/api';
 
 // Helper function to get the token
