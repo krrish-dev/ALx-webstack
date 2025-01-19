@@ -1,5 +1,5 @@
 'use client';
-
+// main chat page running on chat app
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { AuthContext } from '../../context/AuthContext';
