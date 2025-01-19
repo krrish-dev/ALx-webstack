@@ -1,5 +1,5 @@
 'use client';
-
+// rooms area for chat page
 import React from 'react';
 import styles from './chat.module.css';
 
