@@ -1,5 +1,5 @@
 'use client';
-
+// auth for logging in and out and updating user info , loading
 import React, { useState, useEffect, createContext } from 'react';
 import { getUser } from '../utils/api';
 

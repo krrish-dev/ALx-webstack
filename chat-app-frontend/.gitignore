@@ -14,11 +14,8 @@
 /coverage
 
 # application files
-/components
-/login
-/main
-/register
-/context
+/app/components
+
 
 # next.js
 /.next/
@@ -39,6 +36,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+test.js
 
 # vercel
 .vercel
