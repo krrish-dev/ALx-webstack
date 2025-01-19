@@ -1,5 +1,5 @@
 'use client';
-
+// handles user details modal
 import React from 'react';
 import styles from './chat.module.css';
 
