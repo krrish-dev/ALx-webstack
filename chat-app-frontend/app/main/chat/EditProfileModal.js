@@ -1,5 +1,5 @@
 'use client';
-
+// edit profile modal for chat page
 import React, { useState } from 'react';
 import {updateUserProfile, uploadProfilePicture } from '../../utils/api';
 import styles from './chat.module.css';
