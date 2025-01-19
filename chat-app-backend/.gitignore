@@ -1,8 +1,6 @@
 # Ignore node_modules directory
 node_modules/
 middleware/
-models/
-routes/
 # ignore files
 servercopy2.js
 servercopy.js
@@ -13,7 +11,7 @@ testcode.js
 .env.local
 .env.development
 .env.production
-
+.gitignore
 # Ignore log files
 *.log
 logs/
