@@ -1,3 +1,4 @@
+// Description: Routes for user authentication and profile management.
 require('dotenv').config();
 const express = require('express');
 const jwt = require('jsonwebtoken');
