@@ -1,3 +1,4 @@
+// Description: Main server file for the Chat App.
 require('dotenv').config();
 const express = require('express');
 const http = require('http');
